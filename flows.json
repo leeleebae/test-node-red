@@ -37,22 +37,6 @@
         "wires": []
     },
     {
-        "id": "a9184512.6d0338",
-        "type": "file",
-        "z": "3e48bc537eb2d811",
-        "name": "WriteFile",
-        "filename": "/home/debian/Documents/time-schedule0.txt",
-        "appendNewline": true,
-        "createDir": true,
-        "overwriteFile": "true",
-        "encoding": "none",
-        "x": 700,
-        "y": 4680,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "efd15a17.372ff8",
         "type": "file in",
         "z": "3e48bc537eb2d811",
@@ -68,35 +52,6 @@
             [
                 "dec834a4.768678"
             ]
-        ]
-    },
-    {
-        "id": "63338f84.0d9f5",
-        "type": "ui_switch",
-        "z": "3e48bc537eb2d811",
-        "name": "",
-        "label": "MyDevice",
-        "tooltip": "",
-        "group": "bfe48a3e.1b0f4",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "x": 700,
-        "y": 4720,
-        "wires": [
-            []
         ]
     },
     {
@@ -124,12 +79,8 @@
         "x": 490,
         "y": 4700,
         "wires": [
-            [
-                "a9184512.6d0338"
-            ],
-            [
-                "63338f84.0d9f5"
-            ]
+            [],
+            []
         ]
     }
 ]
