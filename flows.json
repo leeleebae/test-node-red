@@ -64,5 +64,18 @@
             [],
             []
         ]
+    },
+    {
+        "id": "2920ef37a2217152",
+        "type": "catch",
+        "z": "3e48bc537eb2d811",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 660,
+        "y": 4680,
+        "wires": [
+            []
+        ]
     }
 ]
