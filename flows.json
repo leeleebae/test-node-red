@@ -27,17 +27,112 @@
         "hidden": false
     },
     {
-        "id": "28c056dc.6e2fba",
+        "id": "43ed56ac5d02b3e3",
         "type": "comment",
         "z": "3e48bc537eb2d811",
         "name": "### This scenario is permanent and requires a file to read an write to ###",
         "info": "",
-        "x": 300,
+        "x": 360,
         "y": 4640,
         "wires": []
     },
     {
-        "id": "dec834a4.768678",
+        "id": "14734ee306aaf894",
+        "type": "file",
+        "z": "3e48bc537eb2d811",
+        "name": "WriteFile",
+        "filename": "/home/debian/Documents/time-schedule0.txt",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1020,
+        "y": 4600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5a70b7b67b090d4c",
+        "type": "inject",
+        "z": "3e48bc537eb2d811",
+        "name": "FireAfterReboot",
+        "props": [
+            {
+                "p": "payload",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "string"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 460,
+        "y": 4620,
+        "wires": [
+            [
+                "e8e9b4b2d3bfc0c8"
+            ]
+        ]
+    },
+    {
+        "id": "e8e9b4b2d3bfc0c8",
+        "type": "file in",
+        "z": "3e48bc537eb2d811",
+        "name": "ReadFile",
+        "filename": "/home/debian/Documents/time-schedule0.txt",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 380,
+        "y": 4800,
+        "wires": [
+            [
+                "d62652c1b58adc4d"
+            ]
+        ]
+    },
+    {
+        "id": "1aedcffb24c7edc2",
+        "type": "ui_switch",
+        "z": "3e48bc537eb2d811",
+        "name": "",
+        "label": "MyDevice",
+        "tooltip": "",
+        "group": "bfe48a3e.1b0f4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 1020,
+        "y": 4640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d62652c1b58adc4d",
         "type": "ui_time_scheduler",
         "z": "3e48bc537eb2d811",
         "group": "bfe48a3e.1b0f4",
@@ -58,24 +153,15 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "x": 490,
-        "y": 4700,
+        "x": 250,
+        "y": 4540,
         "wires": [
-            [],
-            []
-        ]
-    },
-    {
-        "id": "2920ef37a2217152",
-        "type": "catch",
-        "z": "3e48bc537eb2d811",
-        "name": "",
-        "scope": null,
-        "uncaught": false,
-        "x": 660,
-        "y": 4680,
-        "wires": [
-            []
+            [
+                "14734ee306aaf894"
+            ],
+            [
+                "1aedcffb24c7edc2"
+            ]
         ]
     }
 ]
